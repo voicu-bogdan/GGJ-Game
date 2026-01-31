@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://csxkfs5oj5bht" path="res://Scenes/mask.tscn" id="1_lfecr"]
 [ext_resource type="Script" uid="uid://c67niov2fq5f" path="res://Scenes/painting_desk.gd" id="1_vdj41"]
+[ext_resource type="Texture2D" uid="uid://bi2mja7nbtft" path="res://Assets/Drawing/masca(1).png" id="3_442qj"]
 
 [node name="PaintingDesk" type="Node" unique_id=1122379304]
 script = ExtResource("1_vdj41")
@@ -13,9 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.47383606, 0.3476133, 2.8878452e-07, 1)
-
-[node name="Mask" parent="." unique_id=1274813759 instance=ExtResource("1_lfecr")]
-position = Vector2(2979, 810)
 
 [node name="Panel" type="Panel" parent="." unique_id=1415249157]
 anchors_preset = 1
@@ -73,6 +71,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1045033254]
+show_behind_parent = true
+clip_children = 2
+offset_right = 993.0
+offset_bottom = 1399.0
+texture = ExtResource("3_442qj")
+
+[node name="Mask" parent="TextureRect" unique_id=1274813759 instance=ExtResource("1_lfecr")]
+clip_children = 2
 
 [connection signal="drag_ended" from="Panel/HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect" to="." method="_on_color_rect_focus_entered"]
