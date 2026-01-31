@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://deevvui1qdtur"]
+
+[ext_resource type="Script" uid="uid://ckeieyuwl5i0j" path="res://Scenes/character.gd" id="1_ushfy"]
+[ext_resource type="Texture2D" uid="uid://b6tp0wrilg2nh" path="res://Assets/Sprites/npc_line_red.png" id="2_ushfy"]
+
+[node name="Character" type="TextureRect" unique_id=1913573655]
+offset_right = 960.0
+offset_bottom = 1440.0
+texture = ExtResource("2_ushfy")
+script = ExtResource("1_ushfy")
