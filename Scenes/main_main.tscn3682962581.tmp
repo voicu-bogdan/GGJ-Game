@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://2y3hxvsptsdb"]
+
+[ext_resource type="Script" uid="uid://b2tppialhmj0k" path="res://Scenes/main_main.gd" id="1_mhr23"]
+[ext_resource type="Texture2D" uid="uid://bjbebomgs268p" path="res://Assets/Backgrounds/shop_bg_final.PNG" id="2_mhr23"]
+
+[node name="MainMain" type="Control" unique_id=591700795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhr23")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1860392854]
+z_index = -4096
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_mhr23")
+expand_mode = 1
+
+[node name="Customer" type="TextureRect" parent="." unique_id=669227586]
+custom_minimum_size = Vector2(322.5, 720)
+layout_mode = 0
+offset_left = 688.0
+offset_top = 88.0
+offset_right = 1168.0
+offset_bottom = 808.0
+size_flags_vertical = 3
+expand_mode = 1
+
+[node name="DialogBox" type="PanelContainer" parent="." unique_id=1545064302]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -272.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ActualText" type="RichTextLabel" parent="DialogBox" unique_id=1567362305]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100

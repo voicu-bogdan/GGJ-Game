@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://bhjfgft67ci0g"]
 
 [ext_resource type="Script" uid="uid://duaxdlbwl0olc" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://bjbebomgs268p" path="res://Assets/Backgrounds/shop_bg_final.PNG" id="2_48xlc"]
+
+[sub_resource type="Theme" id="Theme_48xlc"]
+
+[sub_resource type="Theme" id="Theme_1ehe0"]
 
 [node name="Node2D" type="Control" unique_id=2049737129]
 layout_mode = 3
@@ -11,6 +16,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1949202312]
+z_index = -4096
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_48xlc")
+expand_mode = 1
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=182526984]
 layout_mode = 1
 anchors_preset = 15
@@ -18,33 +31,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.1764706, 0.13725491, 0.18039216, 1)
+color = Color(1, 1, 1, 0)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1187039441]
 layout_mode = 0
-offset_left = 407.0
-offset_top = 182.0
-offset_right = 704.0
-offset_bottom = 420.0
+offset_left = 470.0
+offset_top = 311.0
+offset_right = 1390.0
+offset_bottom = 808.0
+theme = SubResource("Theme_48xlc")
+theme_override_constants/separation = 50
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer" unique_id=69479076]
+[node name="Start" type="Button" parent="ColorRect/VBoxContainer" unique_id=69479076]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 25
-text = "Start Game"
+theme = SubResource("Theme_1ehe0")
+theme_override_font_sizes/font_size = 100
+text = "Start"
 
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer" unique_id=2089371360]
+[node name="Load" type="Button" parent="ColorRect/VBoxContainer" unique_id=2089371360]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 25
-text = "Start Game"
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Load"
 
-[node name="Button3" type="Button" parent="ColorRect/VBoxContainer" unique_id=1572933718]
+[node name="Exit" type="Button" parent="ColorRect/VBoxContainer" unique_id=1572933718]
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 25
-text = "Start Game"
+theme_override_font_sizes/font_size = 100
+text = "Exit"
 
-[connection signal="button_up" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/Button2" to="." method="_on_button_2_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/Start" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/Load" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/Exit" to="." method="_on_button_3_button_up"]
