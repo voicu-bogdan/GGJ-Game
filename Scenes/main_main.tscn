@@ -23,9 +23,9 @@ expand_mode = 1
 [node name="Customer" type="TextureRect" parent="." unique_id=669227586]
 custom_minimum_size = Vector2(322.5, 720)
 layout_mode = 0
-offset_left = 760.0
+offset_left = 688.0
 offset_top = 88.0
-offset_right = 1082.5
+offset_right = 1168.0
 offset_bottom = 808.0
 size_flags_vertical = 3
 expand_mode = 1
