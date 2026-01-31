@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c16w4dx2d3i4v"]
+
+[ext_resource type="PackedScene" uid="uid://csxkfs5oj5bht" path="res://Scenes/mask.tscn" id="1_lfecr"]
+[ext_resource type="Script" uid="uid://c67niov2fq5f" path="res://Scenes/painting_desk.gd" id="1_vdj41"]
+
+[node name="PaintingDesk" type="Node" unique_id=1122379304]
+script = ExtResource("1_vdj41")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=373656072]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47383606, 0.3476133, 2.8878452e-07, 1)
+
+[node name="Mask" parent="." unique_id=1274813759 instance=ExtResource("1_lfecr")]
+position = Vector2(2979, 810)
+
+[node name="Panel" type="Panel" parent="." unique_id=1415249157]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_bottom = 333.0
+grow_horizontal = 0
+
+[node name="HSlider" type="HSlider" parent="Panel" unique_id=1018214840]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 42.0
+offset_bottom = 84.0
+grow_horizontal = 2
+value = 10.0
+
+[node name="Label" type="Label" parent="Panel/HSlider" unique_id=739352695]
+layout_mode = 1
+offset_top = -42.0
+offset_right = 149.0
+theme_override_font_sizes/font_size = 30
+text = "Brush Size"
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=495118764]
+layout_mode = 0
+offset_top = 84.0
+offset_right = 240.0
+offset_bottom = 333.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel/GridContainer" unique_id=1218479556]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Panel/GridContainer" unique_id=1703086769]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(0, 1, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Panel/GridContainer" unique_id=367769855]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(0, 0, 1, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Panel/GridContainer" unique_id=874668952]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+
+[connection signal="drag_ended" from="Panel/HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect" to="." method="_on_color_rect_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect2" to="." method="_on_color_rect_2_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect3" to="." method="_on_color_rect_3_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect4" to="." method="_on_color_rect_4_focus_entered"]

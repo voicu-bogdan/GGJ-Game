@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://csxkfs5oj5bht"]
 
-[node name="Mask" type="Node2D" unique_id=879045789]
+[ext_resource type="Texture2D" uid="uid://bi2mja7nbtft" path="res://Assets/Drawing/masca(1).png" id="1_daowh"]
+[ext_resource type="Script" uid="uid://sh302q652c7b" path="res://Scenes/mask.gd" id="1_nr6xi"]
+
+[node name="Mask" type="Sprite2D" unique_id=1274813759]
+texture = ExtResource("1_daowh")
+script = ExtResource("1_nr6xi")
+img_size = Vector2i(1000, 0)
