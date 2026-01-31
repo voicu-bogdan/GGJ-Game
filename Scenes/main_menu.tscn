@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bhjfgft67ci0g"]
+
+[ext_resource type="Script" uid="uid://duaxdlbwl0olc" path="res://Scenes/main_menu.gd" id="1_28flt"]
+
+[node name="Node2D" type="Control" unique_id=2049737129]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=182526984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.13725491, 0.18039216, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1187039441]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 182.0
+offset_right = 704.0
+offset_bottom = 420.0
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer" unique_id=69479076]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer" unique_id=2089371360]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+
+[node name="Button3" type="Button" parent="ColorRect/VBoxContainer" unique_id=1572933718]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+
+[connection signal="button_up" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="ColorRect/VBoxContainer/Button3" to="." method="_on_button_3_button_up"]
