@@ -2,9 +2,10 @@ extends Sprite2D
 #@onready var Sprite = get_node("Sprite2D")
 #var isBeingPressed = false
 
-@export var img_size := Vector2i(1000, 1000)
+@export var img_size := Vector2i(1000, 1500)
 @export var paint_color := Color.RED
 @export var brush_size := 10
+@export var square = 0
 
 var img : Image
 
@@ -16,8 +17,27 @@ func _ready() -> void:
 	texture = ImageTexture.create_from_image(img)
 	
 
-func _paint_tex(pos) ->void:
-	img.fill_rect(Rect2i(pos, Vector2i(1, 1)).grow(brush_size), paint_color)
+#func _paint_tex(pos) ->void:
+	#img.fill_rect(Rect2i(pos, Vector2i(1, 1)).grow(brush_size), paint_color)
+
+func _paint_tex(pos) -> void:
+	if square:
+		img.fill_rect(Rect2i(pos, Vector2i(1, 1)).grow(brush_size), paint_color)
+	else:
+		var center = Vector2i(pos)
+		
+		# Loop through a square area that contains the circle
+		for x in range(-brush_size, brush_size):
+			for y in range(-brush_size, brush_size):
+				# Calculate the distance from the current pixel to the center
+				# We use squared length for better performance (avoids square root)
+				if Vector2(x, y).length() <= brush_size:
+					var draw_pos = center + Vector2i(x, y)
+					
+					# Safety check: ensure we aren't drawing outside the image boundaries
+					if draw_pos.x >= 0 and draw_pos.x < img.get_width() \
+					and draw_pos.y >= 0 and draw_pos.y < img.get_height():
+						img.set_pixelv(draw_pos, paint_color)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
