@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cib54eklkj842" path="res://Assets/Backgrounds/shop_bg_blurred.png" id="2_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://bttrob21dkr3d" path="res://Assets/Backgrounds/main_menu.png" id="3_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://buwhkfxli33m3" path="res://Assets/Backgrounds/title.png" id="4_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://dttqa0lt0quyl" path="res://Assets/Buttons/credits.png" id="5_opfnp"]
+[ext_resource type="Texture2D" uid="uid://8uc1sngvy1ux" path="res://Assets/Buttons/credits_hovered.png" id="6_cp0ys"]
 
 [sub_resource type="Theme" id="Theme_1ehe0"]
 
@@ -73,6 +75,19 @@ offset_right = 1728.0
 offset_bottom = 300.0
 texture = ExtResource("4_ce3w2")
 
+[node name="Credits" type="TextureButton" parent="." unique_id=1642592358]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 950.0
+offset_right = 521.0
+offset_bottom = 1071.0
+texture_normal = ExtResource("5_opfnp")
+texture_pressed = ExtResource("6_cp0ys")
+texture_hover = ExtResource("6_cp0ys")
+ignore_texture_size = true
+stretch_mode = 5
+
 [connection signal="button_up" from="ColorRect/Start" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="ColorRect/Load" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="ColorRect/Exit" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="Credits" to="." method="_on_credits_button_up"]
