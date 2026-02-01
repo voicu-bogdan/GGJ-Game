@@ -16,6 +16,7 @@ func _ready() -> void:
 	img = Image.create_empty(img_size.x, img_size.y, false, Image.FORMAT_RGBA8)
 	img.fill(Color.WHITE)
 	texture = ImageTexture.create_from_image(img)
+	#$"../../Panel2/ProgressBar".value = 30
 	
 
 #func _paint_tex(pos) ->void:

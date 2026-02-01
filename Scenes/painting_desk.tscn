@@ -40,7 +40,27 @@ layout_mode = 0
 offset_right = 240.0
 offset_bottom = 254.0
 theme_override_font_sizes/normal_font_size = 30
-text = "test"
+text = "Cuteness"
+
+[node name="CutenessBar" type="ProgressBar" parent="Panel2" unique_id=822385168]
+layout_mode = 0
+offset_top = 47.0
+offset_right = 240.0
+offset_bottom = 74.0
+
+[node name="Color Label2" type="RichTextLabel" parent="Panel2" unique_id=1532557596]
+layout_mode = 0
+offset_top = 74.0
+offset_right = 240.0
+offset_bottom = 254.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Scariness"
+
+[node name="ScarinessBar" type="ProgressBar" parent="Panel2" unique_id=1619670827]
+layout_mode = 0
+offset_top = 119.0
+offset_right = 240.0
+offset_bottom = 146.0
 
 [node name="Panel" type="Panel" parent="." unique_id=1415249157]
 visibility_layer = 2
@@ -247,6 +267,18 @@ offset_left = -815.0
 offset_right = 185.0
 offset_bottom = 1500.0
 
+[node name="Button" type="Button" parent="." unique_id=131827247]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -180.0
+offset_right = 277.0
+offset_bottom = -120.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Complete"
+
 [connection signal="drag_ended" from="Panel/HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect" to="." method="_on_color_rect_focus_entered"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect2" to="." method="_on_color_rect_2_focus_entered"]
@@ -261,3 +293,4 @@ offset_bottom = 1500.0
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect11" to="." method="_on_color_rect_11_focus_entered"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect12" to="." method="_on_color_rect_12_focus_entered"]
 [connection signal="toggled" from="Panel/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
