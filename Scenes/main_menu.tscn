@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bhjfgft67ci0g"]
 
 [ext_resource type="Script" uid="uid://duaxdlbwl0olc" path="res://Scenes/main_menu.gd" id="1_28flt"]
-[ext_resource type="Texture2D" uid="uid://bjbebomgs268p" path="res://Assets/Backgrounds/shop_bg_final.PNG" id="2_48xlc"]
-
-[sub_resource type="Theme" id="Theme_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cib54eklkj842" path="res://Assets/Backgrounds/shop_bg_blurred.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://bttrob21dkr3d" path="res://Assets/Backgrounds/main_menu.png" id="3_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://buwhkfxli33m3" path="res://Assets/Backgrounds/title.png" id="4_ce3w2"]
 
 [sub_resource type="Theme" id="Theme_1ehe0"]
 
@@ -21,47 +21,58 @@ z_index = -4096
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_48xlc")
+texture = ExtResource("2_ce3w2")
 expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=182526984]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1187039441]
+[node name="Menu" type="TextureRect" parent="." unique_id=1579595302]
 layout_mode = 0
-offset_left = 470.0
-offset_top = 311.0
-offset_right = 1390.0
-offset_bottom = 808.0
-theme = SubResource("Theme_48xlc")
-theme_override_constants/separation = 50
+offset_left = 572.0
+offset_top = 196.0
+offset_right = 1422.0
+offset_bottom = 1082.0
+texture = ExtResource("3_1ehe0")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="Start" type="Button" parent="ColorRect/VBoxContainer" unique_id=69479076]
-layout_mode = 2
+[node name="ColorRect" type="TextureRect" parent="." unique_id=1140285831]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 100.0
+
+[node name="Start" type="TextureButton" parent="ColorRect" unique_id=25334324]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 340.0
+offset_right = 1227.0
+offset_bottom = 431.0
 size_flags_vertical = 4
 theme = SubResource("Theme_1ehe0")
-theme_override_font_sizes/font_size = 100
-text = "START"
 
-[node name="Load" type="Button" parent="ColorRect/VBoxContainer" unique_id=2089371360]
-layout_mode = 2
+[node name="Load" type="TextureButton" parent="ColorRect" unique_id=325867870]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 549.0
+offset_right = 1234.0
+offset_bottom = 640.0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 100
 disabled = true
-text = "LOAD"
 
-[node name="Exit" type="Button" parent="ColorRect/VBoxContainer" unique_id=1572933718]
-layout_mode = 2
+[node name="Exit" type="TextureButton" parent="ColorRect" unique_id=1445791706]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 768.0
+offset_right = 1156.0
+offset_bottom = 859.0
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 100
-text = "EXIT"
 
-[connection signal="button_up" from="ColorRect/VBoxContainer/Start" to="." method="_on_button_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/Load" to="." method="_on_button_2_button_up"]
-[connection signal="button_up" from="ColorRect/VBoxContainer/Exit" to="." method="_on_button_3_button_up"]
+[node name="Title" type="TextureRect" parent="." unique_id=1286078720]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 34.0
+offset_right = 1728.0
+offset_bottom = 300.0
+texture = ExtResource("4_ce3w2")
+
+[connection signal="button_up" from="ColorRect/Start" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="ColorRect/Load" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="ColorRect/Exit" to="." method="_on_button_3_button_up"]

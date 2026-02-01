@@ -24,7 +24,7 @@ const dialog_lines : Array[String] = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var npc_id: int = 0
+	var npc_id : int = 0
 	var texture_name: String
 	
 	go_to_workshop.visible = false
@@ -32,7 +32,7 @@ func _ready() -> void:
 	dialog_texture.visible = false
 	await get_tree().create_timer(1).timeout
 	
-	npc_id+=1
+	npc_id = Globals.masksCompleted + 1
 	npc.visible = false     
 	npc.texture = load(get_texture(npc_id))
 	npc.visible = true

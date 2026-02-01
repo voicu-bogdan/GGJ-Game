@@ -84,7 +84,6 @@ vertical_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="DialogLayer" unique_id=1072320188]
 custom_minimum_size = Vector2(100, 50)
-anchors_preset = -1
 offset_left = 1531.0
 offset_top = 892.0
 offset_right = 1751.0

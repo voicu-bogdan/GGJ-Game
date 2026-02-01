@@ -14,6 +14,6 @@ var vanillaCream = "#ffb0ea"
 var seafoamBlue = "#9dd9e4"
 
 var finishedCuteness = 0
-var finishedScariness =0
+var finishedScariness = 0
 
 var masksCompleted = 0
