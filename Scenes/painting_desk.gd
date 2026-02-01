@@ -2,6 +2,8 @@ extends Node
 
 @onready var canvas = $TextureRect/Mask
 @onready var view = $SubViewportContainer/SubViewport
+@onready var color_label = $"Panel2/Color Label"
+var timer = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -15,9 +17,30 @@ func _ready() -> void:
 	#var image = thing.get_texture().get_image()
 	#image.save_png("res://Debug/Debug.png")
 
+func count_colors() -> void:
+	var img = canvas.texture.get_image()
+	var counts = {}
+	for y in range(img.get_height()):
+		for x in range(img.get_width()):
+			var pixel_color = img.get_pixel(x, y)
+			var color_str = pixel_color.to_html()
+			if counts.has(color_str):
+				counts[color_str] += 1
+			else:
+				counts[color_str] = 1
+	call_deferred("_update_ui", counts)
+
+func _update_ui(counts: Dictionary) -> void:
+	color_label.text = "Color Counts: " + str(counts)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	timer += 1
+	if timer == 100:
+		timer = 0 
+		WorkerThreadPool.add_task(count_colors)
+
+		
 
 
 func _on_color_rect_focus_entered() -> void:

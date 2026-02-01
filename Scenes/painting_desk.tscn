@@ -24,6 +24,24 @@ texture = ExtResource("2_i4ag8")
 expand_mode = 2
 stretch_mode = 4
 
+[node name="Panel2" type="Panel" parent="." unique_id=1731227533]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -254.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Color Label" type="RichTextLabel" parent="Panel2" unique_id=495560411]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 254.0
+theme_override_font_sizes/normal_font_size = 30
+text = "test"
+
 [node name="Panel" type="Panel" parent="." unique_id=1415249157]
 visibility_layer = 2
 anchors_preset = 1
