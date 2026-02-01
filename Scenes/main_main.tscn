@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjbebomgs268p" path="res://Assets/Backgrounds/shop_bg_final.PNG" id="2_mhr23"]
 [ext_resource type="Texture2D" uid="uid://di5pbk12qpmk8" path="res://Assets/Sprites/dialog_box.png" id="3_8l4xa"]
 [ext_resource type="Texture2D" uid="uid://d02lmw1gt1lyk" path="res://Assets/Buttons/arrow.png" id="3_061vd"]
+[ext_resource type="FontFile" uid="uid://c6yqmibel6dfw" path="res://Assets/Fonts/SubwayNovellaDEMO.ttf" id="3_hxdvp"]
 [ext_resource type="Texture2D" uid="uid://bsl8s100gs01r" path="res://Assets/Buttons/base.png" id="3_rsbje"]
 [ext_resource type="Texture2D" uid="uid://dfy4edp3pxbv5" path="res://Assets/Buttons/to_workshop.png" id="4_tknce"]
 [ext_resource type="Texture2D" uid="uid://dlxsbk6ecjvmp" path="res://Assets/Buttons/to_workshop_hover.png" id="6_3iee3"]
@@ -61,6 +62,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_8l4xa")
 [node name="ActualText" type="RichTextLabel" parent="DialogLayer/DialogBox" unique_id=1567362305]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_hxdvp")
 theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/background = SubResource("StyleBoxEmpty_061vd")
 vertical_alignment = 1
@@ -77,6 +79,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_3iee3")
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hxdvp")
 theme_override_font_sizes/font_size = 40
 text = "Name"
 horizontal_alignment = 1

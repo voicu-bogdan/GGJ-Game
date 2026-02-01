@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://sodvdu4c0lhr" path="res://Assets/Drawing/umbre (1).png" id="4_w2qmo"]
 [ext_resource type="Texture2D" uid="uid://bbdnl5fyxsn7n" path="res://Assets/Drawing/line_art.png" id="5_i4ag8"]
 [ext_resource type="Texture2D" uid="uid://d4e6htw55ivdc" path="res://Assets/Drawing/masca_base.png" id="7_bao46"]
+[ext_resource type="Texture2D" uid="uid://cslfptnfhw3s0" path="res://Assets/Buttons/finish.png" id="8_n8b8s"]
+[ext_resource type="Texture2D" uid="uid://celcod36gj4jt" path="res://Assets/Buttons/finish_hover.png" id="9_7t2us"]
 
 [node name="PaintingDesk" type="Node" unique_id=1122379304]
 script = ExtResource("1_vdj41")
@@ -267,17 +269,19 @@ offset_left = -815.0
 offset_right = 185.0
 offset_bottom = 1500.0
 
-[node name="Button" type="Button" parent="." unique_id=131827247]
+[node name="Button" type="TextureButton" parent="." unique_id=159906162]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = -180.0
-offset_right = 277.0
-offset_bottom = -120.0
+offset_top = -184.0
+offset_right = 520.0
+offset_bottom = -63.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-text = "Complete"
+texture_normal = ExtResource("8_n8b8s")
+texture_pressed = ExtResource("9_7t2us")
+texture_hover = ExtResource("9_7t2us")
+ignore_texture_size = true
+stretch_mode = 5
 
 [connection signal="drag_ended" from="Panel/HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect" to="." method="_on_color_rect_focus_entered"]

@@ -12,14 +12,11 @@ var animate_text : bool = false
 var current_visible_chars : int = 0 
 
 const dialog_lines : Array[String] = [
-	"Customer: Good day, sir!",
-	"Shopkeeper: Good day!",
-#	"Customer: What a marvelous shop this is. I have heard much of it, and now I see the praise was well deserved.",
-#	"Shopkeeper:You have my thanks. I have labored in this shop for thirty years, having learned all I know from my father, who himself was taught by my grandfather. It is a family tradition, and I dearly hope my son shall continue it.",
-#	"Customer:You are, indeed, a fortunate man!",
-	"Shopkeeper: How may I help you this day, sir? What is it you are looking for?",
-	"Customer: I was in search of a simple mask, a little spooky but not severe, suited to a child of ten, and fashioned in the old manner. Nothing elaborate… with a touch of diabolism",
-	"Shopkeeper: You may be assured that you have come to the proper place!"
+	"Customer: Good day, Shopkeeper.",
+	"Shopkeeper:Good day, Customer.",
+	"Shopkeeper: What is it you are looking for?",
+	"Customer: I was in search of a simple mask, a little spooky or maybe cute.",
+	"Shopkeeper: You may be assured that you have come to the proper place."
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -30,18 +27,23 @@ func _ready() -> void:
 	go_to_workshop.visible = false
 	dialog_ui.visible = false
 	dialog_texture.visible = false
-	await get_tree().create_timer(1).timeout
+	#await get_tree().create_timer(1).timeout
 	
 	npc_id = Globals.masksCompleted + 1
-	npc.visible = false     
-	npc.texture = load(get_texture(npc_id))
-	npc.visible = true
 	
-	dialog_ui.visible = true
-	dialog_texture.visible = true
+	if npc_id <= 2:
+		npc.visible = false     
+		npc.texture = load(get_texture(npc_id))
+		npc.visible = true
+		
+		dialog_ui.visible = true
+		dialog_texture.visible = true
+		
+		dialog_index = 0
+		process_current_line()
 	
-	dialog_index = 0
-	process_current_line()
+	else:
+		get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
 	
 func _on_button_button_up() -> void:
 	get_tree().change_scene_to_file("res://Scenes/painting_desk.tscn")
