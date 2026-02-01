@@ -69,9 +69,9 @@ size_flags_vertical = 4
 
 [node name="Title" type="TextureRect" parent="." unique_id=1286078720]
 layout_mode = 0
-offset_left = 329.0
+offset_left = 283.0
 offset_top = 34.0
-offset_right = 1728.0
+offset_right = 1682.0
 offset_bottom = 300.0
 texture = ExtResource("4_ce3w2")
 

@@ -43,6 +43,7 @@ func _ready() -> void:
 	
 	else:
 		get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
+		Globals.masksCompleted = 0
 	
 func _on_button_button_up() -> void:
 	get_tree().change_scene_to_file("res://Scenes/painting_desk.tscn")
@@ -98,3 +99,6 @@ func _process(delta: float) -> void:
 
 func skip_text_animation():
 	text.visible_ratio = 1
+
+func _on_texture_menu_button_up() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
