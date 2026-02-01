@@ -44,19 +44,19 @@ func _process(delta: float) -> void:
 
 
 func _on_color_rect_focus_entered() -> void:
-	canvas.paint_color = Color.RED
+	canvas.paint_color = Globals.bloodRed
 
 
 func _on_color_rect_2_focus_entered() -> void:
-	canvas.paint_color = Color.GREEN
+	canvas.paint_color = Globals.darkPurple
 
 
 func _on_color_rect_3_focus_entered() -> void:
-	canvas.paint_color = Color.BLUE
+	canvas.paint_color = Globals.teal
 
 
 func _on_color_rect_4_focus_entered() -> void:
-	canvas.paint_color = Color.WHITE
+	canvas.paint_color = Globals.limeGreen
 
 
 func _on_h_slider_drag_ended(value_changed: bool) -> void:
@@ -71,3 +71,35 @@ func _input(event: InputEvent) -> void:
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	canvas.square = $Panel/CheckButton.button_pressed
+
+
+func _on_color_rect_5_focus_entered() -> void:
+	canvas.paint_color = Globals.darkBlue
+
+
+func _on_color_rect_6_focus_entered() -> void:
+	canvas.paint_color = Globals.blackMate
+
+
+func _on_color_rect_7_focus_entered() -> void:
+	canvas.paint_color = Globals.strawberry
+
+
+func _on_color_rect_8_focus_entered() -> void:
+	canvas.paint_color = Globals.sweetGreen
+
+
+func _on_color_rect_9_focus_entered() -> void:
+	canvas.paint_color = Globals.lilacPurple
+
+
+func _on_color_rect_10_focus_entered() -> void:
+	canvas.paint_color = Globals.peachyOrange
+
+
+func _on_color_rect_11_focus_entered() -> void:
+	canvas.paint_color = Globals.vanillaCream
+
+
+func _on_color_rect_12_focus_entered() -> void:
+	canvas.paint_color = Globals.seafoamBlue
