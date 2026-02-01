@@ -2,13 +2,18 @@
 
 [ext_resource type="Script" uid="uid://b2tppialhmj0k" path="res://Scenes/main_main.gd" id="1_mhr23"]
 [ext_resource type="Texture2D" uid="uid://bjbebomgs268p" path="res://Assets/Backgrounds/shop_bg_final.PNG" id="2_mhr23"]
-[ext_resource type="Texture2D" uid="uid://b6k5hkfhpfeyv" path="res://Assets/dialog_box.png" id="3_8l4xa"]
+[ext_resource type="Texture2D" uid="uid://di5pbk12qpmk8" path="res://Assets/Sprites/dialog_box.png" id="3_8l4xa"]
+[ext_resource type="Texture2D" uid="uid://d02lmw1gt1lyk" path="res://Assets/Buttons/arrow.png" id="3_061vd"]
+[ext_resource type="Texture2D" uid="uid://bsl8s100gs01r" path="res://Assets/Buttons/base.png" id="3_rsbje"]
+[ext_resource type="Texture2D" uid="uid://dfy4edp3pxbv5" path="res://Assets/Buttons/to_workshop.png" id="4_tknce"]
+[ext_resource type="Texture2D" uid="uid://dlxsbk6ecjvmp" path="res://Assets/Buttons/to_workshop_hover.png" id="6_3iee3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8l4xa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_061vd"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tknce"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iee3"]
+texture = ExtResource("3_rsbje")
 
 [node name="MainMain" type="Control" unique_id=591700795]
 layout_mode = 3
@@ -28,6 +33,7 @@ texture = ExtResource("2_mhr23")
 expand_mode = 1
 
 [node name="Customer" type="TextureRect" parent="." unique_id=669227586]
+z_index = -1
 custom_minimum_size = Vector2(322.5, 720)
 layout_mode = 0
 offset_left = 688.0
@@ -37,43 +43,80 @@ offset_bottom = 808.0
 size_flags_vertical = 3
 expand_mode = 1
 
-[node name="DialogBox" type="PanelContainer" parent="." unique_id=1545064302]
-layout_mode = 1
+[node name="DialogLayer" type="CanvasLayer" parent="." unique_id=230392186]
+
+[node name="DialogBox" type="PanelContainer" parent="DialogLayer" unique_id=1545064302]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 384.0
-offset_top = -141.0
-offset_right = -404.0
-offset_bottom = -53.0
+offset_left = 382.0
+offset_top = -226.0
+offset_right = -388.0
+offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_8l4xa")
 
-[node name="ActualText" type="RichTextLabel" parent="DialogBox" unique_id=1567362305]
+[node name="ActualText" type="RichTextLabel" parent="DialogLayer/DialogBox" unique_id=1567362305]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/background = SubResource("StyleBoxEmpty_061vd")
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="DialogBox" unique_id=439747500]
+[node name="Name" type="PanelContainer" parent="DialogLayer" unique_id=1979423043]
+custom_minimum_size = Vector2(300, 100)
+offset_left = 80.0
+offset_top = 591.0
+offset_right = 447.0
+offset_bottom = 711.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3iee3")
+
+[node name="Label" type="Label" parent="DialogLayer/Name" unique_id=1694046063]
 layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="DialogLayer" unique_id=1072320188]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = -1
+offset_left = 1531.0
+offset_top = 892.0
+offset_right = 1751.0
+offset_bottom = 1015.0
+texture_normal = ExtResource("3_061vd")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Button" type="TextureButton" parent="." unique_id=1908511379]
+z_index = 8
+layout_mode = 0
+offset_left = 520.0
+offset_top = 816.0
+offset_right = 1270.0
+offset_bottom = 999.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tknce")
-text = "Let's go!"
+theme_type_variation = &"FlatButton"
+texture_normal = ExtResource("4_tknce")
+texture_pressed = ExtResource("6_3iee3")
+texture_hover = ExtResource("6_3iee3")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="DialogTexture" type="TextureRect" parent="." unique_id=1254085535]
 z_index = -1
 layout_mode = 0
-offset_top = 504.0
-offset_right = 1920.0
+offset_left = -14.0
+offset_top = 640.0
+offset_right = 1768.0
 offset_bottom = 1080.0
 texture = ExtResource("3_8l4xa")
 expand_mode = 1
 
-[connection signal="button_up" from="DialogBox/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
