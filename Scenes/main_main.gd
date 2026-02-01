@@ -13,8 +13,7 @@ var current_visible_chars : int = 0
 
 const dialog_lines : Array[String] = [
 	"Customer: Good day, Shopkeeper.",
-	"Shopkeeper:Good day, Customer.",
-	"Shopkeeper: What is it you are looking for?",
+	"Shopkeeper:Good day, Customer. What is it you are looking for?",
 	"Customer: I was in search of a simple mask, a little spooky or maybe cute.",
 	"Shopkeeper: You may be assured that you have come to the proper place."
 ]
@@ -31,7 +30,7 @@ func _ready() -> void:
 	
 	npc_id = Globals.masksCompleted + 1
 	
-	if npc_id <= 2:
+	if npc_id <= 6:
 		npc.visible = false     
 		npc.texture = load(get_texture(npc_id))
 		npc.visible = true
