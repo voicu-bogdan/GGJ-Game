@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://cnn4madrtyxbq"]
+
+[ext_resource type="Script" uid="uid://cxei2noyhfwda" path="res://Scenes/credits.gd" id="1_7xmno"]
+[ext_resource type="Texture2D" uid="uid://b6tanhr4q66i8" path="res://Assets/Backgrounds/credits.png" id="2_uy3b0"]
+[ext_resource type="Texture2D" uid="uid://bsl8s100gs01r" path="res://Assets/Buttons/base.png" id="3_iynit"]
+
+[node name="Credits" type="Control" unique_id=990291271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7xmno")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=634920945]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uy3b0")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2" unique_id=1380453543]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 388.0
+offset_top = -34.0
+offset_right = 1577.0
+offset_bottom = -34.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b]Art & Visual Design[/b]
+Andrada Balla
+Dîrțu Diana 
+
+[b]Programming & Project Management[/b]
+Tudor Catalina
+Voicu Bogdan - Iulian 
+Constantin Cosmina
+
+[b]Special Thanks[/b]
+Global Game Jam 2026
+Haufe Group Timișoara 
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect2" unique_id=1595581041]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -713.0
+offset_top = 380.0
+offset_right = -194.0
+offset_bottom = 53.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Special Thanks
+Global Game Jam 2026
+&
+Haufe Group Timișoara 
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=177304937]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -356.5
+offset_top = -245.0
+offset_right = 356.5
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_iynit")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton" unique_id=1726391416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 100
+text = "Return"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
