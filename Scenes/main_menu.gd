@@ -20,7 +20,7 @@ func _on_button_2_button_up() -> void:
 
 
 func _on_button_3_button_up() -> void:
-	pass # Replace with function body.
+	get_tree().quit()
 
 
 func _on_credits_button_up() -> void:
