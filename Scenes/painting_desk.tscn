@@ -24,6 +24,44 @@ texture = ExtResource("2_i4ag8")
 expand_mode = 2
 stretch_mode = 4
 
+[node name="Panel2" type="Panel" parent="." unique_id=1731227533]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -254.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Color Label" type="RichTextLabel" parent="Panel2" unique_id=495560411]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 254.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Cuteness"
+
+[node name="CutenessBar" type="ProgressBar" parent="Panel2" unique_id=822385168]
+layout_mode = 0
+offset_top = 47.0
+offset_right = 240.0
+offset_bottom = 74.0
+
+[node name="Color Label2" type="RichTextLabel" parent="Panel2" unique_id=1532557596]
+layout_mode = 0
+offset_top = 74.0
+offset_right = 240.0
+offset_bottom = 254.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Scariness"
+
+[node name="ScarinessBar" type="ProgressBar" parent="Panel2" unique_id=1619670827]
+layout_mode = 0
+offset_top = 119.0
+offset_right = 240.0
+offset_bottom = 146.0
+
 [node name="Panel" type="Panel" parent="." unique_id=1415249157]
 visibility_layer = 2
 anchors_preset = 1
@@ -57,6 +95,7 @@ layout_mode = 0
 offset_top = 84.0
 offset_right = 240.0
 offset_bottom = 333.0
+columns = 2
 
 [node name="ColorRect" type="ColorRect" parent="Panel/GridContainer" unique_id=1218479556]
 visibility_layer = 2
@@ -64,7 +103,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 1
-color = Color(1, 0, 0, 1)
+color = Color(0.4862745, 0.007843138, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Panel/GridContainer" unique_id=1703086769]
 visibility_layer = 2
@@ -72,7 +111,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 1
-color = Color(0, 1, 0, 1)
+color = Color(0.1882353, 0.09803922, 0.20392157, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Panel/GridContainer" unique_id=367769855]
 visibility_layer = 2
@@ -80,7 +119,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 1
-color = Color(0, 0, 1, 1)
+color = Color(0.09019608, 0.38039216, 0.38039216, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="Panel/GridContainer" unique_id=874668952]
 visibility_layer = 2
@@ -88,6 +127,71 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 1
+color = Color(0.19607843, 0.8039216, 0.19607843, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Panel/GridContainer" unique_id=1533816626]
+visibility_layer = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(0.011764706, 0.023529412, 0.14901961, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Panel/GridContainer" unique_id=92893791]
+visibility_layer = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(0.15686275, 0.15686275, 0.16862746, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="Panel/GridContainer" unique_id=464365420]
+visibility_layer = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(0.98039216, 0.3137255, 0.3254902, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="Panel/GridContainer" unique_id=1286535134]
+visibility_layer = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(0.6901961, 0.9607843, 0.68235296, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="Panel/GridContainer" unique_id=1313969978]
+visibility_layer = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(0.53333336, 0.38431373, 0.5647059, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="Panel/GridContainer" unique_id=800036602]
+visibility_layer = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(1, 0.8117647, 0.03529412, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="Panel/GridContainer" unique_id=1871868964]
+visibility_layer = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(1, 0.6901961, 0.91764706, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="Panel/GridContainer" unique_id=1565075009]
+visibility_layer = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+color = Color(0.6156863, 0.8509804, 0.89411765, 1)
 
 [node name="CheckButton" type="CheckButton" parent="Panel" unique_id=2077812732]
 layout_mode = 0
@@ -163,9 +267,30 @@ offset_left = -815.0
 offset_right = 185.0
 offset_bottom = 1500.0
 
+[node name="Button" type="Button" parent="." unique_id=131827247]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -180.0
+offset_right = 277.0
+offset_bottom = -120.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Complete"
+
 [connection signal="drag_ended" from="Panel/HSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect" to="." method="_on_color_rect_focus_entered"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect2" to="." method="_on_color_rect_2_focus_entered"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect3" to="." method="_on_color_rect_3_focus_entered"]
 [connection signal="focus_entered" from="Panel/GridContainer/ColorRect4" to="." method="_on_color_rect_4_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect5" to="." method="_on_color_rect_5_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect6" to="." method="_on_color_rect_6_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect7" to="." method="_on_color_rect_7_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect8" to="." method="_on_color_rect_8_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect9" to="." method="_on_color_rect_9_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect10" to="." method="_on_color_rect_10_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect11" to="." method="_on_color_rect_11_focus_entered"]
+[connection signal="focus_entered" from="Panel/GridContainer/ColorRect12" to="." method="_on_color_rect_12_focus_entered"]
 [connection signal="toggled" from="Panel/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

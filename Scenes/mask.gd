@@ -12,9 +12,11 @@ var img : Image
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	paint_color = Globals.bloodRed
 	img = Image.create_empty(img_size.x, img_size.y, false, Image.FORMAT_RGBA8)
 	img.fill(Color.WHITE)
 	texture = ImageTexture.create_from_image(img)
+	#$"../../Panel2/ProgressBar".value = 30
 	
 
 #func _paint_tex(pos) ->void:
